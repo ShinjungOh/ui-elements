@@ -10,14 +10,14 @@ const AccordionItem = ({id, title, description, current, toggle}: {
     toggle: () => void;
 }) => {
     return (
-        <li className={cx('item', {current})} key={id}>
+        <li className={cx('item', 'item2', {current})} key={id}>
             <div className={cx('tab')} onClick={toggle}>{title}</div>
-            {current ? <div className={cx('description')}>{description}</div> : null}
+            <div className={cx('description')}>{description}</div>
         </li>
     );
 }
 
-const Accordion1 = () => {
+const Accordion2 = () => {
     const [currentId, setCurrentId] = useState<string | null>(data[0].id);
 
     const toggleItem = (id: string) => () => {
@@ -26,8 +26,9 @@ const Accordion1 = () => {
 
     return (
         <>
-            <h3>#1. React</h3>
-            <p>HTML이 렌더링 되지 않은 상태라서 검색이 안 되며, SEO 측면에서도 좋지 않음</p>
+            <h3>#2. React</h3>
+            <p>CSS로 처리해서 화면에만 안 보일 뿐, HTML이 렌더링 되어 있는 상태. display none으로 처리해서 검색은 안 됨
+            </p>
             <ul className={cx('container')}>
                 {data.map(d => (
                     <AccordionItem {...d} key={d.id} current={currentId === d.id} toggle={toggleItem(d.id)}/>
@@ -37,4 +38,4 @@ const Accordion1 = () => {
     );
 }
 
-export default Accordion1;
+export default Accordion2;
