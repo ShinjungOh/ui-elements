@@ -10,14 +10,14 @@ const AccordionItem = ({id, title, description, current, toggle}: {
     toggle: () => void;
 }) => {
     return (
-        <li className={cx('item', 'item2', {current})} key={id}>
+        <li className={cx('item', 'item3', {current})} key={id}>
             <div className={cx('tab')} onClick={toggle}>{title}</div>
             <div className={cx('description')}>{description}</div>
         </li>
     );
 }
 
-const Accordion2 = () => {
+const Accordion3 = () => {
     const [currentId, setCurrentId] = useState<string | null>(data[0].id);
 
     const toggleItem = (id: string) => () => {
@@ -26,9 +26,8 @@ const Accordion2 = () => {
 
     return (
         <>
-            <h3>#2. React<sub>CSS로 처리</sub></h3>
-            <p>CSS로 처리해서 화면에만 안 보일 뿐, HTML이 렌더링 되어 있는 상태. display none으로 처리해서 검색은 안 됨
-            </p>
+            <h3>#3. React<sub>css transition 추가</sub></h3>
+            <p>max-height로 구현한 트랜지션의 한계. 여닫을 때 매끄럽지 못함</p>
             <ul className={cx('container')}>
                 {data.map(d => (
                     <AccordionItem {...d} key={d.id} current={currentId === d.id} toggle={toggleItem(d.id)}/>
@@ -38,4 +37,4 @@ const Accordion2 = () => {
     );
 }
 
-export default Accordion2;
+export default Accordion3;

@@ -26,7 +26,7 @@ const Accordion1 = () => {
 
     return (
         <>
-            <h3>#1. React</h3>
+            <h3>#1. React<sub>현재 desc만 html로 그리기</sub></h3>
             <p>HTML이 렌더링 되지 않은 상태라서 검색이 안 되며, SEO 측면에서도 좋지 않음</p>
             <ul className={cx('container')}>
                 {data.map(d => (
