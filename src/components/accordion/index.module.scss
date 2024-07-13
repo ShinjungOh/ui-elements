@@ -83,14 +83,14 @@
       transition: ease 0.3s;
     }
     .input:checked {
-      + .tab {
+      + .tab { // 바로 다음
         background-color: #ace;
 
         &::before {
           content: '-';
         }
       }
-      ~ .description {
+      ~ .description { // siblings
         padding: 15px;
         border-bottom-width: 1px;
         max-height: 300px;

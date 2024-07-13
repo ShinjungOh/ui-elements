@@ -53,5 +53,5 @@ const initiator = (wrapper: HTMLDivElement) => {
     ($items[0].children[0] as HTMLElement).click();
 }
 
-const Accordion4V = () => <VanillaWrapper title="#4" subTitle='순수 JavaScript로 작성' initiator={initiator}/>
+const Accordion4V = () => <VanillaWrapper title="#4" subTitle='순수 JavaScript로 작성, 이벤트 위임' initiator={initiator}/>
 export default Accordion4V;

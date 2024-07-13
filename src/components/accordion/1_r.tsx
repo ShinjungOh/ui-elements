@@ -27,7 +27,7 @@ const Accordion1 = () => {
     return (
         <>
             <h3>#1. React<sub>현재 desc만 html로 그리기</sub></h3>
-            <p>HTML이 렌더링 되지 않은 상태라서 검색이 안 되며, SEO 측면에서도 좋지 않음</p>
+            <p>나머지는 HTML이 렌더링 되지 않은 상태라서 검색이 안 되며, SEO 측면에서도 좋지 않음</p>
             <ul className={cx('container')}>
                 {data.map(d => (
                     <AccordionItem {...d} key={d.id} current={currentId === d.id} toggle={toggleItem(d.id)}/>
