@@ -25,6 +25,7 @@ const TabMenu2 = () => {
     return (
         <>
             <h3>#2. React<sub>다 그려놓고 hidden/show CSS로 처리</sub></h3>
+            <p>스크린리더는 제목1, 2, 3, 4, 설명1, 2, 3, 4 순으로 읽게됨</p>
             <div className={cx('container', 'tabMenu2')}>
                 <ul className={cx('tabList')}>
                     {data.map(d => (
