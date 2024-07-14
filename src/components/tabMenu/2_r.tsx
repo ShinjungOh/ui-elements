@@ -16,11 +16,11 @@ const TabItem = ({id, title, current, toggle}: {
 }
 
 const TabMenu2 = () => {
-    const [currentId, setCurrentId] = useState<string | null>(data[0].id);
+    const [currentId, setCurrentId] = useState<string>(data[0].id);
 
     const toggleItem = (id: string) => () => {
-        setCurrentId(prevState => prevState === id ? null : id);
-    } // 클로저 활용
+        setCurrentId(id);
+    }
 
     return (
         <>

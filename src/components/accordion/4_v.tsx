@@ -48,9 +48,9 @@ const initiator = (wrapper: HTMLDivElement) => {
 
     const $items = data.map(itemBuilder);
     $ul.append(...$items);
+    ($items[0].children[0] as HTMLElement).click();
 
     wrapper.append($ul);
-    ($items[0].children[0] as HTMLElement).click();
 }
 
 const Accordion4V = () => <VanillaWrapper title="#4" subTitle='순수 JavaScript로 작성, 이벤트 위임' initiator={initiator}/>
