@@ -1,4 +1,4 @@
-import SingleOpenContextProvider, {useSingleOpen} from "@/components/tooltip/singleOpenContext";
+import SingleOpenContextProvider, {useSingleOpen} from "@/context/singleOpenContext";
 import data from "@/components/tooltip/data";
 import {SyntheticEvent, useEffect, useState} from "react";
 import cx from "@/components/tooltip/cx";
