@@ -1,4 +1,4 @@
-export const measureLines = (elem: HTMLTextAreaElement, value: string) => {
+export const measureLines = (elem: HTMLElement, value: string) => {
     if (!elem || !value) return 0;
     const canvas = document.createElement('canvas');
     const canvasContext = canvas.getContext('2d')!
