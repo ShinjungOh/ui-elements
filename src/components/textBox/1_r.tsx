@@ -1,19 +1,6 @@
 import cx from "@/components/textBox/cx";
 import {SyntheticEvent, useState} from "react";
-
-const measureLines = (elem: HTMLTextAreaElement, value: string) => {
-    if (!elem || !value) return 0;
-    const canvas = document.createElement('canvas');
-    const canvasContext = canvas.getContext('2d')!
-    const style = window.getComputedStyle(elem);
-    canvasContext.font = `${style.getPropertyValue('font-size')} ${style.getPropertyValue('font-family')}`;
-    const measuredLines = value.split('\n').reduce((r, c) => {
-        return r + Math.max(Math.ceil(canvasContext.measureText(c).width  // 1줄로 나열했을 때의 길이 (px)
-            / elem!.offsetWidth), 1) // 1줄의 길이를 textarea의 너비로 나누기
-    }, 0);
-
-    return measuredLines;
-}
+import {measureLines} from "@/service/util";
 
 const TextBox1 = () => {
     const [text, setText] = useState('');
@@ -23,7 +10,6 @@ const TextBox1 = () => {
         const elem = e.target as HTMLTextAreaElement;
         const value = elem.value;
         const lines = Math.min(Math.max(measureLines(elem, value), 3), 15); // 최소 3줄, 최대 15줄
-        console.log(lines);
         setText(value);
         setLines(lines);
     }
@@ -31,6 +17,7 @@ const TextBox1 = () => {
     return (
         <>
             <h3>#1. React<sub>canvas - controlled 버전</sub></h3>
+            <p>컨트롤드 컴포넌트는 React가 상태를 관리하고 있는 컴포넌트. form 요소에 주로 사용</p>
             <div className={cx('container')}>
                 <textarea
                     className={cx('textarea')}
