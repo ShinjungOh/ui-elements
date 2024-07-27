@@ -14,7 +14,7 @@ const LineClampedText = ({text, lines}: {
         if (elemRef.current && cloneRef.current) {
             toggleClamped(
                 Math.floor(cloneRef.current.offsetHeight - 20)
-                / parseInt(getComputedStyle(elemRef.current).lineHeight) > 3);
+                / parseInt(getComputedStyle(elemRef.current).lineHeight) > (lines || 0));
         }
     }, [lines]);
 
