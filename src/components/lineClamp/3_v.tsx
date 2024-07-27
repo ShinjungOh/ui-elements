@@ -39,7 +39,7 @@ const clampedElemBuilder = (text: string, lines: number, wrapper: HTMLDivElement
     }
 
     const observer = new MutationObserver(() => {
-        if (document.contains($content)) {
+        if (wrapper.contains($content)) {
             handleMutate();
             observer.disconnect();
         }
@@ -57,6 +57,6 @@ const initiator = (wrapper: HTMLDivElement) => {
     wrapper.append(...$elems);
 }
 
-const LineClamp3V = () => <VanillaWrapper title="#3" initiator={initiator}/>
+const LineClamp3V = () => <VanillaWrapper title="#3" subTitle="MutationObserver 사용" initiator={initiator}/>
 
 export default LineClamp3V;

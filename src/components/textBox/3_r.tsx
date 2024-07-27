@@ -13,7 +13,7 @@ const TextBox3 = () => {
             const value = elem.value;
             cloneElem.value = value;
             elem.rows = Math.min(Math.max(
-                Math.ceil(cloneElem.scrollHeight / cloneElem.clientHeight)
+                Math.floor(cloneElem.scrollHeight / cloneElem.clientHeight)
                 , 3), 15); // 최소 3줄, 최대 15줄
         }
         if (elem) elem.addEventListener('input', handleInput);
